@@ -1,0 +1,50 @@
+{
+  "name": "technical-test",
+  "version": "1.0.0",
+  "description": "Technical Test",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "back-dev": "nodemon src/server.js",
+    "front-dev": "webpack-dev-server --mode development --watch",
+    "build": "webpack"
+  },
+  "keywords": [
+    "ract",
+    "express",
+    "mongodb",
+    "node"
+  ],
+  "author": "Alex Zamora - Zuma Digital",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "morgan": "^1.9.1",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.7",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.14"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.0",
+    "mongoose": "^5.3.15",
+    "multer": "^1.4.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "react-router-dom": "^4.3.1",
+    "validator": "^10.11.0"
+  }
+}
