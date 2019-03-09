@@ -23,8 +23,17 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 
 // Routes
-app.use('/products', require('./routes/product'));
-app.use('/users', require('./routes/user'));
+app.use('/api/products/', require('./routes/product'));
+app.use('/api/users/', require('./routes/user'));
+
+// Acept react router
+// app.get('/*', function(req, res) {
+//   res.sendFile(path.join(__dirname, 'public/index.html'), function(err) {
+//     if (err) {
+//       res.status(500).send(err)
+//     }
+//   })
+// })
 
 // Static files
 app.use(express.static(path.join(__dirname, '/public')));
