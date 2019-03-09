@@ -14,6 +14,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import CreateProduct from './components/CreateProduct/CreateProduct';
 import EditProduct from './components/EditProduct/EditProduct';
 import Header from './Components/Header/Header';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export default class App extends Component {
 
@@ -29,9 +30,9 @@ export default class App extends Component {
           <Switch>
             <Route exact path='/' component={Login} />
             <Route exact path='/signup' component={Signup} />
-            <Route exact path='/dashboard' component={Dashboard} />
-            <Route exact path='/create' component={CreateProduct} />
-            <Route exact path='/edit/:id' component={EditProduct} />
+            <PrivateRoute exact path='/dashboard' component={Dashboard} />
+            <PrivateRoute exact path='/create' component={CreateProduct} />
+            <PrivateRoute exact path='/edit/:id' component={EditProduct} />
             <Route path='*' component={NotFound} />
           </Switch>
           <ToastContainer />
