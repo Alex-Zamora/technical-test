@@ -15,6 +15,7 @@ import CreateProduct from './components/CreateProduct/CreateProduct';
 import EditProduct from './components/EditProduct/EditProduct';
 import Header from './Components/Header/Header';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import LoginRoute from './components/LoginRoute/LoginRoute';
 
 export default class App extends Component {
 
@@ -28,7 +29,7 @@ export default class App extends Component {
         <div className="container">
           <Header logout={this.logout} />
           <Switch>
-            <Route exact path='/' component={Login} />
+            <LoginRoute exact path='/' component={Login} />
             <Route exact path='/signup' component={Signup} />
             <PrivateRoute exact path='/dashboard' component={Dashboard} />
             <PrivateRoute exact path='/create' component={CreateProduct} />
