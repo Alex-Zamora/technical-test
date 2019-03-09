@@ -18,13 +18,13 @@ exports.register = (req, res) => {
 
   // Check Validation
   if(!isValid) {
-    return res.status(400).json(errors);
+    return res.status(402).json({success: false, errors});
   }
 
   User.findOne({ email: req.body.email })
     .then(user => {
       if (user) {
-        return res.status(400).json({ email: 'Email already exist' });
+        return res.status(400).json({ success: false, email: 'Email already exist' });
       } else {
         console.log(req.body);
       
@@ -41,8 +41,8 @@ exports.register = (req, res) => {
             newUser.password = hash;
             newUser
               .save()
-              .then(user => res.json(user))
-              .catch(err => console.log(err)); 
+              .then(user => res.json({success: true, user}))
+              .catch(err => console.log({success: false, err})); 
           })
         })
       }
@@ -57,7 +57,7 @@ exports.login = (req, res) => {
   const { errors, isValid } = validateLoginInput(req.body);
 
   if (!isValid) {
-    res.status(400).json(errors);
+    res.status(402).json({success: false, errors});
   }
 
   const email = req.body.email;
@@ -69,7 +69,7 @@ exports.login = (req, res) => {
       // Check for user
       if (!user) {
         errors.email = 'User not found'
-        return res.status(404).json(errors);
+        return res.status(404).json({succes: false, errors});
       }
 
       // Check Password
@@ -85,7 +85,7 @@ exports.login = (req, res) => {
             jwt.sign(
               payload, 
               keys.secretOrKey, 
-              { expiresIn: 3600 }, 
+              { expiresIn: 43200 }, 
               (err, token) => {
                 if (err) res.json({ sucess: false, err: err })
                 res.json({
@@ -95,7 +95,7 @@ exports.login = (req, res) => {
             });
           } else {
             errors.password = 'Password incorrect'
-            return res.status(400).json(errors);
+            return res.status(400).json({succes: false, errors});
           }
         })
     });
