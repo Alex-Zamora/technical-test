@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Header.sass';
 
 const Header = (props) => {
-  const user = localStorage.getItem('currentUser')
+  const user = localStorage.getItem('currentUser');
   return (
     <header>
       <h1>Liverpool App</h1>

@@ -16,11 +16,16 @@ import EditProduct from './components/EditProduct/EditProduct';
 import Header from './Components/Header/Header';
 
 export default class App extends Component {
+
+  logout = () => {
+    localStorage.removeItem('currentUser');
+  }
+
   render() {
     return (
       <Router>
         <div className="container">
-          <Header />
+          <Header logout={this.logout} />
           <Switch>
             <Route exact path='/' component={Login} />
             <Route exact path='/signup' component={Signup} />
