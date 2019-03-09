@@ -8,10 +8,14 @@ const passportAuth = passport.authenticate('jwt', { session: false });
 // Controller CRUD
 const productController = require('../controllers/product');
 
+// Image upload
+const { upload } = require("../utils");
+
 router
   .get('/', passportAuth, productController.index)
-  .post('/', passportAuth, productController.new, )
-  .put('/:id', passportAuth, productController.update)
+  .post('/', passportAuth, upload.single('image'), productController.new)
+  .get('/:id', passportAuth, productController.getOne)
+  .put('/:id', passportAuth, upload.single('image'), productController.update)
   .delete('/:id', passportAuth, productController.delete)
 
 module.exports = router;
