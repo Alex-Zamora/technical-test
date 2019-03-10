@@ -13,7 +13,7 @@ export default class Dashboard extends Component {
       <div>
         <div className="sub-header">
           <div className="create">
-            <Link to='/create' className='btn btn-success' >
+            <Link to='/create' className='btn ' >
               <i className="fas fa-plus"></i>
               Create Product
             </Link>
