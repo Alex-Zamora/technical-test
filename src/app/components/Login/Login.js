@@ -77,7 +77,7 @@ class Login extends Component {
         <form className="login" onSubmit={this.handleLogin}>
           <div className="title">
             <h3>Login</h3>
-            <p>Welcome to the Restaurant App.</p>
+            <p>Welcome to the Liverpool App.</p>
           </div>
           <input
             className={`form-control
