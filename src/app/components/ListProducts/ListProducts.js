@@ -51,7 +51,7 @@ export default class ListProducts extends Component {
       })
       .then(res => res.json())
       .then(data => {
-        toast.success('Restaurant deleted with success')
+        toast.success('Product deleted with success')
         this.getAllProducts();
       })
       .catch(err => console.log(`Error ${err}`))
@@ -86,14 +86,14 @@ export default class ListProducts extends Component {
                   <td className='actions'>
                     <Link 
                       to={`/edit/${product._id}`} 
-                      className='btn btn-info'>
-                      Edit
+                      className='btn'>
+                      <i className="far fa-edit"></i>
                     </Link>
                     <button
-                      className='btn btn-danger'
+                      className='btn'
                       onClick={() => this.deleteProduct(product._id)}
                     >
-                      Delete
+                      <i className="far fa-trash-alt"></i>
                     </button>
                   </td>
                 </tr>
@@ -102,6 +102,10 @@ export default class ListProducts extends Component {
             }
           </tbody>
         </table>
+        {
+          this.state.products.length === 0 &&
+            <h2 className='no-products'>No products</h2>
+        }
       </div>
     </React.Fragment>
     )
