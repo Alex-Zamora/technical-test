@@ -1,0 +1,50 @@
+@keyframes fadeInImg
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+.img-loading
+  opacity: 0
+  width: 100%
+  height: auto
+
+.img-loaded
+  animation: fadeInImg cubic-bezier(0.23, 1, 0.32, 1) 1
+  position: relative
+  opacity: 0
+  animation-fill-mode: forwards
+  animation-duration: 0.7s
+  animation-delay: 0.1s
+
+.product-card
+  padding-bottom: 20px
+  padding-top: 20px
+  text-align: center
+  border: 1px solid #e5e5e5
+  transition: all 0.3s ease 0s
+  margin-bottom: 30px
+  margin-left: 15px
+  margin-right: 15px
+  width: 27%
+  img
+    width: 50%
+  .desc
+    .star-content
+      i
+        color: #d0d0d0
+        display: inline-block
+        margin-right: 2px
+        font-size: 11px
+    h2
+      font-weight: 700
+      font-size: 15px
+      color: #c81685
+      margin-bottom: 5px
+      margin-top: 5px
+    span
+      padding-top: 5px
+      // font-size: 18px
+      font-weight: 500
+  &:hover
+    box-shadow: 0 3px 40px 0 rgba(0, 0, 0, 0.2)
