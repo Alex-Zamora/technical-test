@@ -105,7 +105,7 @@ export default class Register extends Component {
         <form className="register" onSubmit={this.handleRegister}>
           <div className="title">
             <h3>Sign Up</h3>
-            <p>Welcome to the Restaurant App.</p>
+            <p>Welcome to the Liverpool App.</p>
           </div>
           <input
             className={`form-control
