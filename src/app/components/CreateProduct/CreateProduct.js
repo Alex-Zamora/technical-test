@@ -84,7 +84,7 @@ export default class CreateProduct extends Component {
       <div>
         <div className="sub-header">
           <div className="create">
-            <Link to='/dashboard' className='btn btn-secondary'>
+            <Link to='/dashboard' className='btn'>
               <i className="fas fa-chevron-left"></i>
               Product List
             </Link>
