@@ -16,6 +16,7 @@ import EditProduct from './components/EditProduct/EditProduct';
 import Header from './Components/Header/Header';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import LoginRoute from './components/LoginRoute/LoginRoute';
+import SearchProducts from './components/SearchProducts/SearchProducts';
 
 export default class App extends Component {
 
@@ -34,6 +35,7 @@ export default class App extends Component {
             <PrivateRoute exact path='/dashboard' component={Dashboard} />
             <PrivateRoute exact path='/create' component={CreateProduct} />
             <PrivateRoute exact path='/edit/:id' component={EditProduct} />
+            <PrivateRoute exact path='/search' component={SearchProducts} />
             <Route path='*' component={NotFound} />
           </Switch>
           <ToastContainer />
