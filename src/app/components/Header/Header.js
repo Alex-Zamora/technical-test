@@ -11,6 +11,26 @@ const Header = (props) => {
         {
           user
           ? (
+            <Link className="search" to='/dashboard'>
+              {/* <i className="fas fa-table"></i> */}
+              Dashboard
+            </Link>
+          )
+          : ''
+        }
+        {
+          user
+          ? (
+            <Link className="search" to='/search'>
+              {/* <i className="fas fa-search"></i> */}
+              Search
+            </Link>
+          )
+          : ''
+        }
+        {
+          user
+          ? (
             <Link className="logout" onClick={props.logout} to='/'>
               <i className="fas fa-lock"></i>
               Logout
