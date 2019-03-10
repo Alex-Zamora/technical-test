@@ -1,0 +1,81 @@
+.wrapper-search-products
+  height: calc(100% - 55px)
+  display: flex
+  justify-content: space-between
+  .sidebar
+    // display: none
+    top: 0px
+    height: 100%
+    position: fixed
+    width: 25%
+    background: #e8e4e7
+    background: #f2f2f2
+    border-right: 1px solid #d4d8d8
+    .header
+      background: #e10098
+      padding-top: 20px
+      h3
+        font-size: 18px
+        font-weight: 700
+        color: white
+        width: 50%
+        border-bottom: 4px solid #f196cf
+        text-align: center
+        padding-bottom: 10px
+    ul
+      padding: 30px
+      span
+        color: #e10098
+      li
+        border: 1px solid #e10098
+        border-radius: 20px
+        display: table
+        padding: 0px 17px 1px
+        margin-bottom: 10px
+  .main
+    width: 70%
+    // width: 100%
+    margin-left: auto
+    background: white
+    height: calc(100vh - 55px)
+  .nav-page
+    padding: 0px 30px
+    margin-bottom: 30px
+    .prev
+      margin-right: 15px
+  .wrapper-result
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    padding: 0px 15px
+    height: auto
+    background: white
+    .redirect
+      text-align: center
+      font-size: 28px
+      margin: 100px auto
+      width: 100%
+      height: 100%
+      color: #c81685
+      font-weight: 700
+      animation: effect 0.7s ease
+      display: flex
+      flex-direction: column
+      a
+        font-size: 16px
+    p.error-not-found
+      text-align: center
+      font-size: 28px
+      margin: 100px auto
+      width: 100%
+      height: 100%
+      color: #c81685
+      font-weight: 700
+      animation: effect 0.7s ease
+    @keyframes effect
+      0% 
+        // transform: scale(0.0)
+        opacity: 0
+      100%
+        // transform: scale(1.0)
+        opacity: 1
