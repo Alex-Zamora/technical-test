@@ -1,12 +1,10 @@
-# Prueba técnica para la vacante como desarrollador Frontend
-
-## MERN STACK
+# Prueba técnica para desarrollador Frontend (MERN Stack)
 
 ## Frontend
 
 Para la construcción del Frontend se utilizo React en versión 16.8.1, React Router, Sass, Webpack y Babel 7. Se crearon rutas privadas que solo son accedidas mediante un token valido. También se implementaron todas las validaciones en los formularios.
 
-## backend
+## Backend
 
 La siguiente api proporciona registro de usuarios, autenticación y un api con autorización para el registro, actualización y eliminación de productos.
 
@@ -156,6 +154,7 @@ GET
 ### Headers
 ```
  Authorization: Bearer <token proporcionado por el api de autenticación>
+```
 
 ### Success Response - Codigo HTTP 200
 
