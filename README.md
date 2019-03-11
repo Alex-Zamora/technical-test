@@ -4,11 +4,11 @@
 
 Para la construcción del Frontend se utilizo React en versión 16.8.1, React Router, Sass y Webpack. Se crearon rutas privadas que solo son accedidas mediante un token valido. También se implementaron todas las validaciones en los formularios.
 
-# Servidor
+## Servidor
 
 La siguiente api proporciona una api pública para el registro de usuarios, un api de autenticación y un api con autorización para el registro, actualización y eliminación de productos.
 
-# Funcionalidades Extra
+## Funcionalidades Extra
 
 - Autenticación de usuarios usando JWT para poder gestionar las acciones.
 - Cliente SPA.
