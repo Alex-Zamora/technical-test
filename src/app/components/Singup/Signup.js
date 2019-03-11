@@ -154,7 +154,7 @@ export default class Register extends Component {
           />
           {
             submited && !email &&
-            <div className="is-required">Maternal Surname is required</div>
+            <div className="is-required">Email is required</div>
           }
           {
             errors.email && email &&

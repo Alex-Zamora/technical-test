@@ -13,6 +13,7 @@ const validateLoginInput = require('../validation/login');
 // @desc Register user
 // @access Public
 exports.register = (req, res) => {
+  console.log(req.body);
   // Destructuring
   const { errors, isValid } = validateRegisterInput(req.body);
 
@@ -23,8 +24,12 @@ exports.register = (req, res) => {
 
   User.findOne({ email: req.body.email })
     .then(user => {
+      console.log(user);
       if (user) {
-        return res.status(400).json({ success: false, email: 'Email already exist' });
+        return res.status(402).json({ 
+          success: false, 
+          errors: {email:'Email already exist'} 
+      });
       } else {
         console.log(req.body);
       

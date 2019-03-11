@@ -22,7 +22,7 @@ exports.new = (req, res, next) => {
 
   // Check Validation
   if(!isValid) {
-    return res.status(402).json({success: false, errors});
+    return res.status(422).json({success: false, errors});
   }
 
   const product = new Product({
@@ -55,12 +55,26 @@ exports.new = (req, res, next) => {
   }
 };
 
-exports.getOne = (req, res, next) => {
-  Product.findById(req.params.id, function (err, product) {
-    if (err) return next(err);
-    res.status(200).json({ success: true,  product});
-  });
-};
+// exports.getOne = (req, res, next) => {
+//   Product.findById(req.params.id, function (err, product) {
+//     if (err) return next(err);
+//     res.status(200).json({ success: true,  product});
+//   });
+// };
+
+exports.getOne = async (req, res, next) => { 
+	try {
+		const product = await Product.findOne({
+			_id: req.params.id
+		});
+    !product
+      ? res.status(404).json({ success: false, message: "not found Product"})
+			: res.status(200).json({ success: true,  product});
+	} catch (error) {
+		res.status(500).json({ success: false, message: error})
+	}
+}; 
+
 
 exports.update = async (req, res, next) => {
   try {
